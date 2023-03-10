@@ -38,4 +38,13 @@ public interface UserRepository {
      * @return {@link List}<{@link User}>
      */
     List<User> findAllUser();
+
+    /**
+     * 更新INFO文件更新时间
+     *
+     * @param username 用户名
+     * @param time     时间
+     * @return long
+     */
+    long updateInfoFileUpdateTime(String username, String time);
 }

@@ -1,6 +1,6 @@
 package com.japps.model.vo;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -18,15 +18,16 @@ public class UserVo implements Serializable {
 
     private String recentLogUpdateTime;
 
-    @JsonIgnore
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private String occupation;
 
-    @JsonIgnore
     private String device;
 
-    @JsonIgnore
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private String startFrom;
 
     private String fromLastUpdate;
+
+    private String infoFileUpdateTime;
 
 }

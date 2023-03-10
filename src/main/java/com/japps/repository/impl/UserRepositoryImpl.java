@@ -49,4 +49,12 @@ public class UserRepositoryImpl implements UserRepository {
     public List<User> findAllUser() {
         return mongoTemplate.findAll(User.class, COLLECTION_USER);
     }
+
+    @Override
+    public long updateInfoFileUpdateTime(String username, String time) {
+        Query query = new Query(Criteria.where("username").is(username));
+        Update update = new Update().set("info_file_update_time", time);
+        UpdateResult updateResult = mongoTemplate.updateFirst(query, update, User.class, COLLECTION_USER);
+        return updateResult.getMatchedCount();
+    }
 }

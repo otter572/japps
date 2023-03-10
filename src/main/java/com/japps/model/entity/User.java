@@ -26,6 +26,8 @@ public class User {
 
     private int pa_threshold;
 
+    private String info_file_update_time;
+
     public User(UserDto userDto) {
         this.username = userDto.getUsername();
         this.telephone = userDto.getTelephone();

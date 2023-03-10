@@ -30,8 +30,8 @@ public class UserController {
      * @return {@link ResultBean}<{@link String}>
      */
     @RequestMapping(value = "/register", method = RequestMethod.POST)
-    public ResultBean<String> register(@RequestBody UserVo userVo) {
-        UserDto userDto = null;
+    public ResultBean register(@RequestBody UserVo userVo) {
+        UserDto userDto = new UserDto();
         BeanUtils.copyProperties(userVo, userDto);
         try {
             userService.register(userDto);

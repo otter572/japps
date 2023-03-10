@@ -49,7 +49,7 @@ public class TimeUtil {
         if (diffHours == 0) {
             return diffDays + "D";
         }
-        return diffDays + "D" + diffHours + "H";
+        return diffDays + "D_" + diffHours + "H";
     }
 
 }

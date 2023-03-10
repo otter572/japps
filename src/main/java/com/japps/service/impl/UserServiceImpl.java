@@ -50,6 +50,13 @@ public class UserServiceImpl implements UserService {
             else {
                 userDto.setFromLastUpdate(TimeUtil.countDiffToPresent(recentLogUpdateTime));
             }
+            String infoFileUpdateTime = userDto.getInfoFileUpdateTime();
+            if ("0".equals(infoFileUpdateTime)) {
+                userDto.setInfoFileUpdateTime("user never upload");
+            }
+            else {
+                userDto.setInfoFileUpdateTime(TimeUtil.countDiffToPresent(infoFileUpdateTime));
+            }
             userDtos.add(userDto);
         }
         return userDtos;
